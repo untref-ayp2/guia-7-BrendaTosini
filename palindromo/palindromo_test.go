@@ -18,3 +18,7 @@ func TestNoPalindromos(t *testing.T) {
 	assert.False(t, EsPalindromo("ANITA LAVA LA TINA"))
 	// cómo podemos modificar el código para que reconozca este último palíndromo?
 }
+
+func TestPalindromoConEspacios(t *testing.T) {
+	assert.True(t, EsPalindromo2("ANITA LAVA LA TINA"))
+}
