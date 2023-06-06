@@ -10,4 +10,5 @@ func Mover(n int, origen string, aux string, destino string) {
 		fmt.Println("disco", n, origen, "->", destino)
 		Mover(n-1, aux, origen, destino)
 	}
+
 }

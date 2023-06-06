@@ -4,5 +4,11 @@ package ejercicios
 // cociente y el resto de la división entera mediante
 // restas sucesivas
 func DivisionEntera(dividendo, divisor int) (cociente, resto int) {
-	panic("Not implemented")
+
+	if dividendo >= divisor {
+		cociente, _ = DivisionEntera(dividendo-divisor, divisor)
+		cociente++
+		resto = dividendo - (divisor * cociente)
+	}
+	return cociente, resto
 }

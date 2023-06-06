@@ -23,9 +23,12 @@ func TestEjercicio03(t *testing.T) {
 	assert.Equal(t, 1, CantidadDeUnos(4))
 	assert.Equal(t, 2, CantidadDeUnos(5))
 	assert.Equal(t, 3, CantidadDeUnos(42))
+	assert.Equal(t, 2, CantidadDeUnos(6))
+
 }
 
 func TestEjercicio04(t *testing.T) {
+	assert.Equal(t, "aloH", Invertir("Hola"))
 	assert.Equal(t, "neuqueN", Invertir("Neuquen"))
 	assert.Equal(t, "!odnuM ,aloH", Invertir("Hola, Mundo!"))
 }
@@ -61,6 +64,7 @@ func TestEjercicio08(t *testing.T) {
 	cociente, resto := DivisionEntera(8, 2)
 	assert.Equal(t, 4, cociente)
 	assert.Equal(t, 0, resto)
+
 }
 
 func TestEjercicio09(t *testing.T) {
@@ -79,9 +83,13 @@ func TestEjercicio10(t *testing.T) {
 }
 
 func TestEjercicio11(t *testing.T) {
+	assert.PanicsWithValue(t, "No es potencia de 0", func() { EsPotencia(2, 0) })
+	assert.False(t, EsPotencia(10, 3))
+	assert.False(t, EsPotencia(2, 9))
 	assert.True(t, EsPotencia(8, 2))
 	assert.True(t, EsPotencia(1, 2))
 	assert.False(t, EsPotencia(7, 2))
+
 }
 
 func TestEjercicio12(t *testing.T) {
@@ -101,8 +109,8 @@ func TestEjercicio13(t *testing.T) {
 }
 
 func TestEjercicio14(t *testing.T) {
-	assert.True(t, SumaElementos([]int{7, 4, 6, 8}, []int{3, 1, 6, 6}, 7))
 	assert.False(t, SumaElementos([]int{7, 4, 6, 8}, []int{3, 1, 6, 6}, 2))
+	assert.True(t, SumaElementos([]int{7, 4, 6, 8}, []int{3, 1, 6, 6}, 7))
 
 	assert.True(t, SumaElementos([]int{1, 2, 3, 4, 5}, []int{1, 2, 3, 4, 5}, 4))
 	assert.False(t, SumaElementos([]int{1, 2, 3, 4, 5}, []int{1, 2, 3, 4, 5}, 11))

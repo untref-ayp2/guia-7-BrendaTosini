@@ -5,5 +5,16 @@ package ejercicios
 // que es igual al número de unos en la representación binaria
 // de n/2, mas 1 si es impar.
 func CantidadDeUnos(n int) int {
-	panic("Not implemented")
+
+	if n == 0 || n == 1 {
+		return n
+	}
+	cantidad := 0
+
+	if n%2 == 1 {
+		cantidad = 1 + CantidadDeUnos(n/2)
+	} else {
+		cantidad = CantidadDeUnos(n / 2)
+	}
+	return cantidad
 }
